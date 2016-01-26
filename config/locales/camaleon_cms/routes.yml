@@ -6,6 +6,14 @@ es:
     search: buscar
     profile: perfil
 
+zh_CN:
+  routes:
+    group: grupo
+    category: categoria
+    tag: etiqueta
+    search: buscar
+    profile: perfil
+
 pt:
   routes:
     group: grupo

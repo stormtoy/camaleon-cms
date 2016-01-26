@@ -206,3 +206,6 @@ zh_CN:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  plugin:
+    contact_form:
+      contact_form: 联系表单
