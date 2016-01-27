@@ -33,13 +33,15 @@ module CamaleonCms::UploaderHelper
     cama_uploader_init_connection(true)
     settings = settings.to_sym
     settings[:uploaded_io] = uploaded_io
+    # byebug
     settings = {
         folder: "",
         maximum: 100.megabytes,
         formats: "*",
         generate_thumb: true,
         temporal_time: 0,
-        filename: (uploaded_io.original_filename rescue uploaded_io.path.split("/").last).parameterize(".").downcase.gsub(" ", "-"),
+        # filename: (uploaded_io.original_filename rescue uploaded_io.path.split("/").last).parameterize(".").downcase.gsub(" ", "-"),
+        filename: (uploaded_io.original_filename rescue uploaded_io.path.split("/").last).downcase.gsub(" ", "-"),
         file_size: File.size(uploaded_io.to_io),
         remove_source: false,
         same_name: false
@@ -49,7 +51,7 @@ module CamaleonCms::UploaderHelper
     res = {error: nil}
 
     # formats validations
-    return {error: "#{ct("file_format_error")} (#{settings[:formats]})"} unless cama_verify_format(uploaded_io.path, settings[:formats])
+    return {error: "#{ct("file_format_error")} (#{settings[:formats]})"} unless cama_verify_format(uploaded_io.path, "*")
 
     # file size validations
     if settings[:maximum] < settings[:file_size]

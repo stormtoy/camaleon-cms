@@ -71,8 +71,8 @@ zh_CN:
       read_more: "Read More"
       submit: "Submit"
       send: "Send"
-      login: "Login"
-      logout: "Logout"
+      login: "登录"
+      logout: "注销"
       confirm: "Are you confirm?"
       register: "Register"
       proceted_article: 'Protected article'
